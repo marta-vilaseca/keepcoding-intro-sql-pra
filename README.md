@@ -15,7 +15,7 @@ Le intentas explicar que tal vez la causa sea que existe _Netflix_, pero como le
 - [Script SQL que realiza todas las funciones requeridas:](./script.sql) (en proceso)
   - [x] Crear un nuevo esquema
   - [x] Crear todas las tablas, con sus correspondientes foreign keys y otras constraints necesarias
-  - [ ] Cargar datos ficticios proporcionados
+  - [x] Cargar datos ficticios proporcionados
   - [ ] Las dos consultas que se piden (segunda opcional)
 
 ## ✅ Requisitos funcionales
