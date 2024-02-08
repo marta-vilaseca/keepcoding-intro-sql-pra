@@ -752,3 +752,26 @@ insert into alquiler(num_socio, copia_id, fecha_alquiler, fecha_devolucion)
 select distinct s.num_socio, tv.id_copia, cast(tv.fecha_alquiler as date), cast(tv.fecha_devolucion as date) from tmp_videoclub tv
 join socio s on tv.dni = s.dni
 
+
+/*
+ * CONSULTA 1: Qué copias hay actualmente disponibles para alquilar? Devolver título y núm de copias
+
+
+	- Seleccionamos los campos que queremos que aparezcan en el resultado, el titulo como titulo_pelicula 
+	  y lo que sera el numero de copias no alquiladas como copias_disponibles    
+	- Unimos las tablas pelicula y pelicula_copias con la ayuda de la id de la pelicula, de modo que 
+	  cada copia queda ligada a la info que le corresponde (y lo mas importante, a su titulo)
+	- Hacemos un join con alquiler, pero filtrando de forma que solo me quedo con aquellas peliculas 
+	  que tienen fecha de retorno nula. Lo hacemos con un left join para asegurar que todas las 
+	  copias registradas en el sistema aparezcan en el resultado, se hayan encontrado en la tabla 
+	  alquiler (con el criterio que hemos aplicado) o no
+	- La clausula WHERE deja solo aquellos registros que no han encontrado coincidencia, es decir los que 
+	  no han aparecido en nuestro filtro de películas actualmente alquiladas en el paso previo
+	- Ya tenemos el resultado que buscábamos, finalmente lo agrupamos por titulo
+ */
+ 
+select p.titulo as titulo_pelicula, count(pc.id_copia) as copias_disponibles from pelicula p
+join pelicula_copias pc on p.id_pelicula = pc.pelicula_id
+left join alquiler a on pc.id_copia = a.copia_id and a.fecha_devolucion is null
+where a.copia_id is null
+group by p.titulo;

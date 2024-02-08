@@ -11,12 +11,13 @@ Le intentas explicar que tal vez la causa sea que existe _Netflix_, pero como le
 
 ## 📄 Entregables
 
-- [Esquema en formato draw.io](./videoclub.drawio) (terminado)
-- [Script SQL que realiza todas las funciones requeridas:](./script.sql) (en proceso)
+- [Esquema en formato draw.io](./videoclub.drawio)
+- [Script SQL que realiza todas las funciones requeridas:](./script.sql)
   - [x] Crear un nuevo esquema
   - [x] Crear todas las tablas, con sus correspondientes foreign keys y otras constraints necesarias
   - [x] Cargar datos ficticios proporcionados
-  - [ ] Las dos consultas que se piden (segunda opcional)
+  - [x] Primera consulta a la BBDD
+  - [ ] Segunda consulta OPCIONAL a la BBDD
 
 ## ✅ Requisitos funcionales
 
