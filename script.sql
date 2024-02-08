@@ -750,7 +750,7 @@ inner join pelicula p on p.titulo = tv.titulo;
 -- table ALQUILER 
 insert into alquiler(num_socio, copia_id, fecha_alquiler, fecha_devolucion)
 select distinct s.num_socio, tv.id_copia, cast(tv.fecha_alquiler as date), cast(tv.fecha_devolucion as date) from tmp_videoclub tv
-join socio s on tv.dni = s.dni
+join socio s on tv.dni = s.dni;
 
 
 /*
@@ -769,7 +769,7 @@ join socio s on tv.dni = s.dni
 	  no han aparecido en nuestro filtro de películas actualmente alquiladas en el paso previo
 	- Ya tenemos el resultado que buscábamos, finalmente lo agrupamos por titulo
  */
- 
+
 select p.titulo as titulo_pelicula, count(pc.id_copia) as copias_disponibles from pelicula p
 join pelicula_copias pc on p.id_pelicula = pc.pelicula_id
 left join alquiler a on pc.id_copia = a.copia_id and a.fecha_devolucion is null
