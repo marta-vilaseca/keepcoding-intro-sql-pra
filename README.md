@@ -17,7 +17,7 @@ Le intentas explicar que tal vez la causa sea que existe _Netflix_, pero como le
   - [x] Crear todas las tablas, con sus correspondientes foreign keys y otras constraints necesarias
   - [x] Cargar datos ficticios proporcionados
   - [x] Primera consulta a la BBDD
-  - [ ] Segunda consulta OPCIONAL a la BBDD
+  - [x] Segunda consulta OPCIONAL a la BBDD
 
 ## ✅ Requisitos funcionales
 
